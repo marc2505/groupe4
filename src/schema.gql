@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  sayMessage(message: String!): String!
+}
+
+type Mutation {
+  sendProducts(input: SendProductsInput!): String!
+}
+
+input SendProductsInput {
+  productsWithIngredients: [ProductInput!]!
+}
+
+input ProductInput {
+  name: String!
+  brandId: Int!
+  gtin: String
+  articleNumber: String
+  labelIds: [Int!]
+  isFrozen: Boolean!
+  allergens: [AllergenInput!]
+  ingredients: [IngredientInput!]
+}
+
+input AllergenInput {
+  allergenId: Int!
+  allergenType: EnumAllergenType!
+}
+
+enum EnumAllergenType {
+  UNDECLARED
+  MAY_CONTAINS
+  CONTAINS
+  FREE_FROM
+}
+
+input IngredientInput {
+  name: String!
+  percentage: Float!
+}
